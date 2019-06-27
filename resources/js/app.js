@@ -20,6 +20,10 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('header-main', require('./components/HeaderComponent.vue').default);
+Vue.component('sidebar-main', require('./components/SidebarComponent.vue').default);
+Vue.component('aside-main', require('./components/AsideComponent.vue').default);
+Vue.component('footer-main', require('./components/FooterComponent.vue').default);
 Vue.component('home', require('./components/HomeComponent.vue').default);
 
 /**

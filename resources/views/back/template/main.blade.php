@@ -42,19 +42,23 @@
     </script>
   </head>
   <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-    @include('back.template.header')
-    <div class="app-body">
-      @include('back.template.sidebar')
-      <main class="main">
-        <!-- Breadcrumb-->
-        <div class="container-fluid">
-          <div class="animated fadeIn"></div>
+
+    <div id ="app">
+        <header-main :asset="'{{ $asset = asset('') }}'"></header-main>
+        <div class="app-body">
+            <sidebar-main :asset="'{{ $asset = asset('') }}'"></sidebar-main>
+            <main class="main">
+                    <!-- Breadcrumb-->
+                    <div class="container-fluid">
+                      <div class="animated fadeIn"></div>
+                    </div>
+                    @yield('content')
+            </main>
+            <aside-main :asset="'{{ $asset = asset('') }}'"></aside-main>
         </div>
-        @yield('content')   {{-- Yield interactua con las demas vistas --}}
-      </main>
-      @include('back.template.aside')
+        <footer-main></footer-main>
     </div>
-    @include('back.template.footer')
+
     <!-- CoreUI and necessary plugins-->
     <script src="{{ asset('admin/modules_coreui/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/modules_coreui/popper.js/dist/umd/popper.min.js') }}"></script>
@@ -62,6 +66,8 @@
     <script src="{{ asset('admin/modules_coreui/pace-progress/pace.min.js') }}"></script>
     <script src="{{ asset('admin/modules_coreui/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('admin/modules_coreui/@coreui/coreui/dist/js/coreui.min.js') }}"></script>
-    @yield('additional_script')
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- @yield('additional_script') --}}
   </body>
+
 </html>
