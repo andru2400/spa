@@ -47,25 +47,6 @@
       @include('back.template.sidebar')
       <main class="main">
         <!-- Breadcrumb-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">Home</li>
-          <li class="breadcrumb-item">
-            <a href="#">Admin</a>
-          </li>
-          <li class="breadcrumb-item active">Dashboard</li>
-          <!-- Breadcrumb Menu-->
-          <li class="breadcrumb-menu d-md-down-none">
-            <div class="btn-group" role="group" aria-label="Button group">
-              <a class="btn" href="#">
-                <i class="icon-speech"></i>
-              </a>
-              <a class="btn" href="./">
-                <i class="icon-graph"></i>  Dashboard</a>
-              <a class="btn" href="#">
-                <i class="icon-settings"></i>  Settings</a>
-            </div>
-          </li>
-        </ol>
         <div class="container-fluid">
           <div class="animated fadeIn"></div>
         </div>
@@ -77,7 +58,7 @@
     <!-- CoreUI and necessary plugins-->
     <script src="{{ asset('admin/modules_coreui/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/modules_coreui/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('admin/modules_coreui/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    {{-- <script src="{{ asset('admin/modules_coreui/bootstrap/dist/js/bootstrap.min.js') }}"></script> --}}
     <script src="{{ asset('admin/modules_coreui/pace-progress/pace.min.js') }}"></script>
     <script src="{{ asset('admin/modules_coreui/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('admin/modules_coreui/@coreui/coreui/dist/js/coreui.min.js') }}"></script>
