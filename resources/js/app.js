@@ -7,6 +7,51 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+import HomeComponent from './components/views/HomeComponent.vue';
+import NewsComponent from './components/views/NewsComponent.vue';
+import NewsTypesComponent from './components/views/NewsTypesComponent.vue';
+import UsersComponent from './components/views/UsersComponent.vue';
+import RolesComponent from './components/views/RolesComponent.vue';
+import GroupsComponent from './components/views/GroupsComponent.vue';
+
+const router = new VueRouter({
+    mode:'history',
+    routes:[
+        {
+            path: '/home',
+            name: 'homeIndex',
+            component: HomeComponent
+        },
+        {
+            path: '/news',
+            name: 'newsIndex',
+            component: NewsComponent
+        },
+        {
+            path: '/news-types',
+            name: 'newsIndex',
+            component: NewsTypesComponent
+        },
+        {
+            path: '/users',
+            name: 'newsIndex',
+            component: UsersComponent
+        },
+        {
+            path: '/roles',
+            name: 'newsIndex',
+            component: RolesComponent
+        },
+        {
+            path: '/groups-parameters',
+            name: 'newsIndex',
+            component: GroupsComponent
+        }
+    ]
+});
 
 /**
  * The following block of code may be used to automatically register your
@@ -24,7 +69,8 @@ Vue.component('header-main', require('./components/HeaderComponent.vue').default
 Vue.component('sidebar-main', require('./components/SidebarComponent.vue').default);
 Vue.component('aside-main', require('./components/AsideComponent.vue').default);
 Vue.component('footer-main', require('./components/FooterComponent.vue').default);
-Vue.component('home', require('./components/HomeComponent.vue').default);
+
+// Vue.component('home', require('./components/HomeComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -34,4 +80,5 @@ Vue.component('home', require('./components/HomeComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
+    router
 });

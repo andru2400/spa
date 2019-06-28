@@ -11,14 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('dashboard/home', function () {
-    return view('back.layout.home.home');
-});
+// Route::get('dashboard/home', function () {
+//     return view('back.layout.home.home');
+// });
+
+// Route::get('/', function () {
+//     return view('back.layout.home.home');
+// });
+
+Route::get('/{any}', 'pagesController@spa')->where('any', '.*');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
